@@ -19,7 +19,7 @@ void runTests() {
     char (*text) [MAX_LINE_LENGTH] = (char (*) [MAX_LINE_LENGTH]) calloc(num_of_elements, sizeof(char[MAX_LINE_LENGTH]));
 
     char (*start) [MAX_LINE_LENGTH] = text;
-    for (int i = 0; i < num_of_elements; i++, start++) {
+    for (size_t i = 0; i < num_of_elements; i++, start++) {
         for (int ch = 0; ch <= my_strlen(test_data[i]); ch++) {
             (*start)[ch] = test_data[i][ch];
         }
@@ -30,7 +30,7 @@ void runTests() {
         (int) num_of_elements
     };
     dprintf("test square array:\n");
-    print_square_array(&square_array);
+    print_square_array(&square_array, stdout);
 
     test_sorter(&square_array);
     dprintf("------sorter tests successfull------\n");

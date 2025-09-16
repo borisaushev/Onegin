@@ -12,40 +12,42 @@ int main() {
 
     dprintf("\n-------TESTS RUN SUCCESSFULLY-------\n");
 
-    printf("\n-------SQUARE ARRAY START-------\n");
+    FILE* output = fopen(OUTPUT_FILE_PATH, "w");
 
-    square_array_t square_array = parse_square_array(FILE_PATH);
-    print_square_array(&square_array);
+    fprintf(output, "\n-------SQUARE ARRAY START-------\n");
 
-    printf("\n--------------------\nSORTED BY START\n--------------------\n");
+    square_array_t square_array = parse_square_array(SOURCE_FILE_PATH);
+    print_square_array(&square_array, output);
+
+    fprintf(output,"\n--------------------\nSORTED BY START\n--------------------\n");
     sort_square_array(&square_array, my_strcmp_start);
-    print_square_array(&square_array);
+    print_square_array(&square_array, output);
 
-    printf("\n--------------------\nSORTED BY END\n--------------------\n");
+    fprintf(output,"\n--------------------\nSORTED BY END\n--------------------\n");
     sort_square_array(&square_array, my_strcmp_end);
-    print_square_array(&square_array);
+    print_square_array(&square_array, output);
 
     dprintf("freeing data\n");
     free(square_array.text);
 
-    printf("\n-------SQUARE ARRAY END-------\n");
+    fprintf(output,"\n-------SQUARE ARRAY END-------\n");
 
 
-    printf("\n-------POINTER ARRAY START-------\n");
+    fprintf(output,"\n-------POINTER ARRAY START-------\n");
 
-    pointer_array_t pointer_array = parse_pointer_array(FILE_PATH);
-    print_pointer_array(&pointer_array);
+    pointer_array_t pointer_array = parse_pointer_array(SOURCE_FILE_PATH);
+    print_pointer_array(&pointer_array, output);
 
-    printf("\n--------------------\nSORTED BY START\n--------------------\n");
+    fprintf(output,"\n--------------------\nSORTED BY START\n--------------------\n");
     sort_pointer_array(&pointer_array, my_strcmp_start);
-    print_pointer_array(&pointer_array);
+    print_pointer_array(&pointer_array, output);
 
-    printf("\n--------------------\nSORTED BY END\n--------------------\n");
+    fprintf(output,"\n--------------------\nSORTED BY END\n--------------------\n");
     sort_pointer_array(&pointer_array, my_strcmp_end);
-    print_pointer_array(&pointer_array);
+    print_pointer_array(&pointer_array, output);
 
     dprintf("freeing data\n");
     free(pointer_array.text);
 
-    printf("\n-------POINTER ARRAY END-------\n");
+    fprintf(output,"\n-------POINTER ARRAY END-------\n");
 }

@@ -12,6 +12,8 @@ const int MAX_LINE_LENGTH = 45;
 
 const int LINES_COUNT = 5134;
 
-const char* const FILE_PATH = "C:\\Users\\bossb\\CLionProjects\\Onegin\\src\\onegintext.txt";
+const char* const SOURCE_FILE_PATH = "C:\\Users\\bossb\\CLionProjects\\Onegin\\src\\onegintext.txt";
+
+const char* const OUTPUT_FILE_PATH = "C:\\Users\\bossb\\CLionProjects\\Onegin\\src\\output.txt";
 
 #endif //ONEGIN_COMMON_H

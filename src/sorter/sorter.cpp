@@ -86,7 +86,8 @@ int my_strcmp_start(const char* str1, const char* str2) {
 
         assert(i1 < l1);
         assert(i2 < l2);
-        char c1 = tolower(str1[i1]), c2 = tolower(str2[i2]);
+        char c1 = (char) tolower(str1[i1]);
+        char c2 = (char) tolower(str2[i2]);
         if (c1 < c2) {
             return -1;
         }
@@ -139,7 +140,8 @@ int my_strcmp_end(const char* str1, const char* str2) {
 
         assert(i1 >= 0);
         assert(i2 >= 0);
-        char c1 = tolower(str1[i1]), c2 = tolower(str2[i2]);
+        char c1 = (char) tolower(str1[i1]);
+        char c2 = (char) tolower(str2[i2]);
         if (c1 < c2) {
             return -1;
         }

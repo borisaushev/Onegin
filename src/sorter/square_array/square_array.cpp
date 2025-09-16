@@ -1,8 +1,9 @@
-#include "square_array.h"
-#include "sorter.h"
-
 #include <cassert>
 #include <cstdio>
+#include <stdio.h>
+
+#include "square_array.h"
+#include "sorter.h"
 
 
 void swap_square(void* array, int i1, int i2) {
@@ -36,7 +37,7 @@ void swap_lines(char* str1, char* str2) {
 }
 
 
-void print_square_array(square_array_t* array) {
+void print_square_array(square_array_t* array, FILE* out_stream) {
     assert(array);
     assert(array->text);
 
@@ -44,7 +45,7 @@ void print_square_array(square_array_t* array) {
 
     for (int i = 0; i < array->lines_count; i++) {
         // dprintf("line %d\n", i);
-        printf("%s", array->text[i]);
+        fprintf(out_stream, "%s", array->text[i]);
     }
 
     // dprintf("print finished\n");

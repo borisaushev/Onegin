@@ -1,6 +1,8 @@
 #ifndef ONEGIN_SQUARE_ARRAY_H
 #define ONEGIN_SQUARE_ARRAY_H
 
+#include <stdio.h>
+
 #include "common.h"
 
 typedef struct square_array {
@@ -17,6 +19,6 @@ void sort_square_array(square_array_t* square_array, int (*my_strcmp) (const cha
 
 void swap_lines(char* str1, char* str2);
 
-void print_square_array(square_array_t* array);
+void print_square_array(square_array_t* array, FILE *out_stream);
 
 #endif //ONEGIN_SQUARE_ARRAY_H
