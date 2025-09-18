@@ -3,13 +3,33 @@ project(Onegin)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ded
-        src/reader/line_reader.cpp
-	    src/tests/tests.cpp
-	    src/sorter/sorter.cpp
-		src/sorter/pointer_array/buffer_version/pointer_array_buf.cpp
-        src/main.cpp
+# Найти все .cpp файлы
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+add_executable(ded ${SOURCES})
+
+# Найти ВСЕ подпапки в include рекурсивно
+file(GLOB_RECURSE INCLUDE_DIRS
+		LIST_DIRECTORIES true
+		RELATIVE ${CMAKE_SOURCE_DIR}
+		"include/*"
 )
 
-target_compile_options(ded PRIVATE -IC:\\Users\\bossb\\OneDrive\\Desktop\\ded\\TXLib-master -IC:\\Users\\bossb\\CLionProjects\\Onegin\\src -IC:\\Users\\bossb\\CLionProjects\\Onegin\\src\\reader -IC:\\Users\\bossb\\CLionProjects\\Onegin\\src\\sorter -IC:\\Users\\bossb\\CLionProjects\\Onegin\\src\\tests -IC:\\Users\\bossb\\CLionProjects\\Onegin\\src\\sorter\\pointer_array\\buffer_version -DDEBUG)
+# Отфильтровать только директории
+set(INCLUDE_PATHS "")
+foreach(dir ${INCLUDE_DIRS})
+	if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/${dir})
+		list(APPEND INCLUDE_PATHS ${CMAKE_SOURCE_DIR}/${dir})
+	endif()
+endforeach()
 
+# Добавить все найденные include пути
+target_include_directories(ded PRIVATE
+		${CMAKE_SOURCE_DIR}/include
+		${INCLUDE_PATHS}
+		${CMAKE_SOURCE_DIR}/src
+		C:/Users/bossb/OneDrive/Desktop/ded/TXLib-master
+)
+
+target_compile_definitions(ded PRIVATE DEBUG)
+
+message("Include paths: ${INCLUDE_PATHS}")
