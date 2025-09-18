@@ -1,53 +1,40 @@
-#include "TXLib.h"
+#include "common.h"
 #include "line_reader.h"
-#include "pointer_array.h"
 #include "sorter.h"
-#include "square_array.h"
 #include "tests.h"
 
 int main() {
     #ifdef DEBUG
-        runTests();
+        //runTests();
     #endif //DEBUG
 
-    dprintf("\n-------TESTS RUN SUCCESSFULLY-------\n");
+    // SAFE_CALL(read_from_file());
+    // SAFE_CALL(sort());
+    // SAFE_CALL(output_in_fie());
+    // SAFE_CALL(read_from_file);
+    // SAFE_CALL(read_from_file);
+    //TODO target unclude for .h files
+
+    dprintf("\n\n-------TESTS RUN SUCCESSFULLY-------\n\n");
 
     FILE* output = fopen(OUTPUT_FILE_PATH, "w");
 
-    fprintf(output, "\n-------SQUARE ARRAY START-------\n");
+    dprintf("\nopened file\n");
 
-    square_array_t square_array = parse_square_array(SOURCE_FILE_PATH);
-    print_square_array(&square_array, output);
+    fprintf(output,"\n\n-------BUFFERED POINTER ARRAY START-------\n\n");
+    dprintf("\n\n-------BUFFERED POINTER ARRAY START-------\n\n");
 
-    fprintf(output,"\n--------------------\nSORTED BY START\n--------------------\n");
-    sort_square_array(&square_array, my_strcmp_start);
-    print_square_array(&square_array, output);
+    pointer_array_buf_t ptr_array = {};
+    parse_text(SOURCE_FILE_PATH, &ptr_array);
+    print_ptr_array_buf(&ptr_array);
 
-    fprintf(output,"\n--------------------\nSORTED BY END\n--------------------\n");
-    sort_square_array(&square_array, my_strcmp_end);
-    print_square_array(&square_array, output);
+    qsort(ptr_array.pointer_arr, ptr_array.lines_count, sizeof(ptr_wrap_t), my_strcmp_start);
+    dprintf("\n\n-----SORTED POINTER ARRAY BY START-------\n\n");
+    print_ptr_array_buf(&ptr_array);
 
-    dprintf("freeing data\n");
-    free(square_array.text);
+    qsort(ptr_array.pointer_arr, ptr_array.lines_count, sizeof(ptr_wrap_t), my_strcmp_end);
+    dprintf("\n\n-----SORTED POINTER ARRAY BY END-------\n\n");
+    print_ptr_array_buf(&ptr_array);
 
-    fprintf(output,"\n-------SQUARE ARRAY END-------\n");
-
-
-    fprintf(output,"\n-------POINTER ARRAY START-------\n");
-
-    pointer_array_t pointer_array = parse_pointer_array(SOURCE_FILE_PATH);
-    print_pointer_array(&pointer_array, output);
-
-    fprintf(output,"\n--------------------\nSORTED BY START\n--------------------\n");
-    sort_pointer_array(&pointer_array, my_strcmp_start);
-    print_pointer_array(&pointer_array, output);
-
-    fprintf(output,"\n--------------------\nSORTED BY END\n--------------------\n");
-    sort_pointer_array(&pointer_array, my_strcmp_end);
-    print_pointer_array(&pointer_array, output);
-
-    dprintf("freeing data\n");
-    free(pointer_array.text);
-
-    fprintf(output,"\n-------POINTER ARRAY END-------\n");
+    fclose(output);
 }

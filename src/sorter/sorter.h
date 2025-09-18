@@ -19,19 +19,19 @@ void sort_array(
 
 /**
  * @brief Compare strings from start (ignoring punctuation/whitespace)
- * @param str1 First string to compare
- * @param str2 Second string to compare
+ * @param pstr1 First string to compare
+ * @param pstr2 Second string to compare
  * @return Comparison result (-1, 0, 1)
  */
-int my_strcmp_start(const char* str1, const char* str2);
+int my_strcmp_start(const void* vpstr1, const void* vpstr2);
 
 /**
  * @brief Compare strings from end (reverse order)
- * @param str1 First string to compare
- * @param str2 Second string to compare
+ * @param vstr1 First string to compare
+ * @param vstr2 Second string to compare
  * @return Comparison result (-1, 0, 1)
  */
-int my_strcmp_end(const char* str1, const char* str2);
+int my_strcmp_end(const void* vpstr1, const void* vpstr2);
 
 /**
  * @brief Calculate string length until newline

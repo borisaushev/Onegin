@@ -45,19 +45,21 @@ INCL = -IC:/Users/bossb/OneDrive/Desktop/ded/TXLib-master \
 		-IC:/Users/bossb/CLionProjects/Onegin/src/sorter \
 		-IC:/Users/bossb/CLionProjects/Onegin/src/tests \
 		-IC:/Users/bossb/CLionProjects/Onegin/src/sorter/pointer_array \
+		-IC:/Users/bossb/CLionProjects/Onegin/src/sorter/pointer_array/buffer_version \
 		-IC:/Users/bossb/CLionProjects/Onegin/src/sorter/square_array \
 		-IC:/Users/bossb/CLionProjects/Onegin/src/reader
 
 DEPS =  src/sorter/sorter.h \
         src/tests/tests.h \
 		src/reader/line_reader.h \
-		src/sorter/pointer_array/pointer_array.h \
+		src/sorter/pointer_array/buffer_version/pointer_array_buf.h \
 		src/sorter/square_array/square_array.h
 
 SRC = src/reader/line_reader.cpp \
 	  src/tests/tests.cpp \
 	  src/sorter/sorter.cpp \
 	  src/sorter/pointer_array/pointer_array.cpp \
+	  src/sorter/pointer_array/buffer_version/pointer_array_buf.cpp \
 	  src/sorter/square_array/square_array.cpp \
 	  src/main.cpp
 

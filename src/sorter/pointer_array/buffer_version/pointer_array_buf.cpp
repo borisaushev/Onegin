@@ -1,11 +1,22 @@
-#include <cassert>
-#include <cstdio>
+#include "pointer_array_buf.h"
+
 #include <stdio.h>
 
-#include "pointer_array.h"
-#include "sorter.h"
+#include "common.h"
 
 
+void my_printf(const ptr_wrap_t ptr_wrap) {
+    printf("%.*s\n", ptr_wrap.len, ptr_wrap.ptr);
+}
+
+void print_ptr_array_buf(pointer_array_buf* ptr_array) {
+    dprintf("PRINTING POINTER ARRAY BUFFER\n");
+    for (int i = 0; i < ptr_array->lines_count; i++) {
+        my_printf(ptr_array->pointer_arr[i]);
+    }
+    //TODO: puts()
+}
+/*
 char* get_line_pointer_array(int index, void* pointer_array) {
     return ((pointer_array_t*) pointer_array)->text[index];
 }
@@ -33,3 +44,4 @@ void print_pointer_array(pointer_array_t* array, FILE* out_stream) {
         fprintf(out_stream, "%s", array->text[i]);
     }
 }
+*/

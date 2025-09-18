@@ -1,10 +1,11 @@
 #include "sorter.h"
 
+
 #include <cassert>
-
-#include "pointer_array.h"
-
 #include <filesystem>
+
+#include "common.h"
+#include "pointer_array_buf.h"
 
 void sort_array(
     void* array,
@@ -30,7 +31,7 @@ void sort_array(
 
             assert(j < lines_count);
             if ((*my_strcmp)(get_line(j, array), min_line) < 0) {
-                dprintf("line: %s is less than: %s", get_line(j, array), min_line);
+        //        dprintf("line: %s is less than: %s", get_line(j, array), min_line);
                 min_line = get_line(j, array);
                 minI = j;
             }
@@ -38,10 +39,10 @@ void sort_array(
 
         assert(i < lines_count);
         dprintf("min string is %s\n", min_line);
-        dprintf("before swap: %s, %s\n", get_line(minI, array), get_line(i, array));
+        //dprintf("before swap: %s, %s\n", get_line(minI, array), get_line(i, array));
         swap(array, i, minI);
 
-        dprintf("swapped lines: %s, %s\n", get_line(minI, array), get_line(i, array));
+        // dprintf("swapped lines: %s, %s\n", get_line(minI, array), get_line(i, array));
 
     }
 
@@ -55,10 +56,20 @@ int my_strlen(const char* str) {
     return len;
 }
 
+int my_strcmp_start(const void* vpstr1, const void* vpstr2) {
+    assert(vpstr1);
+    assert(vpstr2);
 
-int my_strcmp_start(const char* str1, const char* str2) {
+    ptr_wrap* wstr1 = (ptr_wrap_t*)vpstr1;
+    ptr_wrap* wstr2 = (ptr_wrap_t*)vpstr2;
+    assert(wstr1);
+    assert(wstr2);
+
+    const char* str1 = wstr1->ptr;
+    const char* str2 = wstr2->ptr;
     assert(str1);
     assert(str2);
+
     //dprintf("comparing str1: %s, str2: %s\n", str1, str2);
     const int l1 = my_strlen(str1);
     const int l2 = my_strlen(str2);
@@ -109,8 +120,18 @@ int my_strcmp_start(const char* str1, const char* str2) {
     return 0;
 }
 
+int my_strcmp_end(const void* vpstr1, const void* vpstr2) {
+    assert(vpstr1);
+    assert(vpstr2);
 
-int my_strcmp_end(const char* str1, const char* str2) {
+    ptr_wrap* wstr1 = (ptr_wrap_t*)vpstr1;
+    ptr_wrap* wstr2 = (ptr_wrap_t*)vpstr2;
+    assert(wstr1);
+    assert(wstr2);
+
+    const char* str1 = wstr1->ptr;
+    const char* str2 = wstr2->ptr;
+
     assert(str1);
     assert(str2);
     //dprintf("comparing str1: %s, str2: %s\n", str1, str2);

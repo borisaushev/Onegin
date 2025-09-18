@@ -1,11 +1,12 @@
 #ifndef ONEGIN_TESTS_H
 #define ONEGIN_TESTS_H
 
-#include "square_array.h"
+
+const int MAX_LINE_LENGTH = 75;
 
 void runTests();
 
-void test_sorter(square_array_t* square_array);
+void test_sorter();
 
 void test_swap_lines(char* s1, char* s2);
 

@@ -4,85 +4,81 @@
 #include <cassert>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
+#include <sys/stat.h>
 
 #include "common.h"
-#include "square_array.h"
+#include "pointer_array/buffer_version/pointer_array_buf.h"
 
-
-square_array_t parse_square_array(const char *file_path) {
-    assert(file_path);
-
-    FILE *stream = fopen(file_path, "r");
-
-    if (!stream) {
-        printf("Could not open file %s\n", file_path);
-        assert(0);
+long get_file_size(const char* filename) {
+    struct stat st;
+    if (stat(filename, &st) == 0) {
+        return st.st_size;
     }
-
-    char (*text)[MAX_LINE_LENGTH] = (char (*)[MAX_LINE_LENGTH]) calloc(LINES_COUNT, sizeof(char[MAX_LINE_LENGTH]));
-
-    char (*start)[MAX_LINE_LENGTH] = text;
-    int count = 0;
-    char *result = NULL;
-    while (!feof(stream)) {
-        result = fgets(*start, MAX_LINE_LENGTH, stream);
-        start++;
-        count++;
+    else {
+        perror("Error getting file status");
+        return -1;
     }
-
-    assert(result);
-    for (int i = 0; i < MAX_LINE_LENGTH; i++) {
-        assert(i < MAX_LINE_LENGTH);
-        if (result[i] == '\0') {
-            result[i] = '\n';
-            break;
-        }
-    }
-
-    text = (char (*)[MAX_LINE_LENGTH]) realloc(text, sizeof(char[MAX_LINE_LENGTH]) * count);
-
-    dprintf("read %d lines from file %s\n", count, file_path);
-
-    square_array_t square_array = {.text = text, .lines_count = count};
-
-    fclose(stream);
-    return square_array;
 }
 
-pointer_array_t parse_pointer_array(const char *file_path) {
+int parse_text(const char *file_path, pointer_array_buf_t *arr_ptr) {
     assert(file_path);
 
-    FILE *stream = fopen(file_path, "r");
+    int stream = open(file_path, O_RDONLY);
 
-    if (!stream) {
+    int file_size = get_file_size(file_path);
+    dprintf("file size: %d\n", file_size);
+
+    if (file_size == -1) {
         printf("Could not open file %s\n", file_path);
-        assert(0);
+        exit(1);
     }
 
-    char** text = (char **) calloc(LINES_COUNT, sizeof(char *));
-    int count = 0;
-    char buffer[MAX_LINE_LENGTH];
-    char *result = NULL;
-    while (!feof(stream)) {
-        fgets(buffer, MAX_LINE_LENGTH, stream);
-        text[count] = strdup(buffer);
-        result = text[count];
-        count++;
-    }
+    char* text = (char *) calloc(file_size, sizeof(char));
+    int bytes_read = read(stream, text, file_size);
 
-    assert(result);
-    for (int i = 0; i < MAX_LINE_LENGTH; i++) {
-        assert(i < MAX_LINE_LENGTH);
-        if (result[i] == '\0') {
-            result[i] = '\n';
-            break;
+    if (bytes_read == -1) {
+        printf("Could not read file %s\n", file_path);
+        dprintf("error: %s\n", strerror(errno));
+    }
+    dprintf("Read %d bytes\n", bytes_read);
+
+    text = (char *) realloc(text,  (bytes_read + 2));
+    file_size = bytes_read;
+    text[bytes_read] = (text[bytes_read-1] == '\n' ? '\0' : '\n');
+    text[bytes_read + 1] = '\0';
+    close(stream);
+
+    int ptr_count = 0;
+    for (int i = 0; i < bytes_read+1; i++) {
+        if (text[i] == '\n') {
+            ptr_count++;
         }
     }
 
-    text = (char **) realloc(text, sizeof(char *) * count);
+    ptr_wrap_t* ptr_array = (ptr_wrap_t*) calloc(ptr_count, sizeof(ptr_wrap_t));
 
-    dprintf("read %d lines from file %s\n", count, file_path);
+    char* curptr = &text[0];
+    char* nextLine = strchr(curptr, '\n');
+    //while (() != NULL) {
+    for (int i = 0; i < ptr_count; i++) {
+        nextLine = strchr(curptr, '\n');
+        assert(nextLine);
 
-    fclose(stream);
-    return {text, count};
+        int len = nextLine - curptr;
+        ptr_array[i] = {.ptr=curptr, .len=len};
+        curptr = nextLine + 1;
+    }
+
+    //printf("count: %d - ptr_count: %d\n", count, ptr_count);
+    //assert(count == ptr_count);
+    assert(text[file_size + 1] == '\0');
+
+    dprintf("read %d lines from file %s\n", ptr_count, file_path);
+
+    arr_ptr->pointer_arr = ptr_array;
+    arr_ptr->buf = text;
+    arr_ptr->lines_count = ptr_count;
+
+    return 0;
 }
