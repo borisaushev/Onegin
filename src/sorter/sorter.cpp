@@ -90,21 +90,9 @@ int my_strcmp_end(const void* vpstr1, const void* vpstr2) {
     for (; i1 >= 0 && i2 >= 0; i1--, i2--) {
         assert(i1 >= 0);
         assert(i2 >= 0);
-        while ((ispunct(str1[i1]) || str1[i1] == ' ') && i1 >= 0) {
-            i1--;
+        for (; (ispunct(str1[i1]) || str1[i1] == ' ') && i1 >= 0; i1--) {
         }
-        while ((ispunct(str2[i2]) || str2[i2] == ' ') && i2 >= 0) {
-            i2--;
-        }
-
-        if (i1 == 0 && i2 == 0) {
-            return 0;
-        }
-        if (i1 == 0) {
-            return -1;
-        }
-        if (i2 == 0) {
-            return 1;
+        for (; (ispunct(str2[i2]) || str2[i2] == ' ') && i2 >= 0; i2--) {
         }
 
         assert(i1 >= 0);
@@ -115,6 +103,16 @@ int my_strcmp_end(const void* vpstr1, const void* vpstr2) {
             return -1;
         }
         if (c1 > c2) {
+            return 1;
+        }
+
+        if (i1 == 0 && i2 == 0) {
+            return 0;
+        }
+        if (i1 == 0) {
+            return -1;
+        }
+        if (i2 == 0) {
             return 1;
         }
     }

@@ -49,7 +49,7 @@ static void read_file(const char *file_path, char** text, int* bytes_read) {
     close(stream);
 }
 
-static void count_lines(char *text, int bytes_read, int* ptr_count) {
+static void count_lines(const char *text, int bytes_read, int* ptr_count) {
     for (int i = 0; i < bytes_read+1; i++) {
         if (text[i] == '\n') {
             (*ptr_count)++;

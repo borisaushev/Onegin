@@ -5102,32 +5102,6 @@ Zizi, thou mirror of my mind,
 
 -----SORTED POINTER ARRAY BY END-------
 
-V
-X
-L
-L
-L
-X
-X
-V
-X
-V
-V
-V
-I
-I
-V
-I
-V
-I
-I
-I
-I
-X
-V
-X
-X
-X
 Nor Byron, Walter Scott, nor Seneca,
 real wishes became entangled in its meshes. He exercised a
 at the Lyceum. We regret to add that, having accepted a
@@ -5825,8 +5799,8 @@ And the recesses of my mind
 That I to you reveal my mind?
 So uncongenial to my mind,
 Brought by a pedlar vagabond
-CANTO THE SECOND
 Canto The Second
+CANTO THE SECOND
 End of Canto the Second.
 Of whirligigs were very fond,
 And stoves of various shapes abound.
@@ -7355,8 +7329,8 @@ But to Vladimir Eugene saith:
 Petersburg the banks of the Neva are lined throughout with
 [Note: IstominaA celebrated Circassian dancer of the day, with
 separate the residences of the gentry. Still, the alacrity with
-CANTO THE SEVENTH
 Canto The Seventh
+CANTO THE SEVENTH
 End of Canto The Seventh
 Without the ken of parents both,
 Beneath his head the pillow smooth,
@@ -7373,8 +7347,8 @@ utterances under its influence for what they are worth.]
 Impelled by zeal for moral worth,
 The last poor obol I was worth
 Ombre, and whist all others worth:
-Canto The Fourth
 CANTO THE FOURTH
+Canto The Fourth
 End of Canto The Fourth
 Restrained the impulses of youth
 To the impressions of our youth,
@@ -7385,93 +7359,56 @@ Thee only would I choose, in truth,
 Canto The Sixth
 CANTO THE SIXTH
 END OF CANTO THE SIXTH
-XI
-LI
-VI
-II
-VI
-VI
-LI
-VI
-II
-II
-II
-II
-VI
-VI
-XI
-VI
-XI
-II
-XI
-II
-II
-XI
-XI
-XI
-XI
-VI
+I
+I
+I
+I
+I
+I
+I
 In that morass where you and I
 My word of honour given have I.
-VII
+II
+II
+II
+II
+II
+II
+II
+II
 III
 III
-XII
-VII
-XII
-III
-VII
 III
 III
-VII
 III
-VII
-XII
-XII
-LII
-VII
-LII
-VII
 III
-XII
-XII
-XII
-VII
-XII
-VIII
-VIII
-VIII
-XIII
+III
 LIII
-XIII
-XIII
-XIII
-XIII
-XIII
+XLIII
+XLIII
+XLIII
+XLIII
+XLIII
+XLIII
 VIII
 VIII
 VIII
 VIII
-XIII
-XIII
 VIII
-XLIII
-XLIII
-XLIII
-XLIII
-XLIII
-XLIII
-XVIII
-XVIII
-XVIII
-XVIII
-XVIII
-XVIII
-XVIII
-XVIII
+VIII
+VIII
+VIII
 XLVIII
 XLVIII
 XLVIII
+XVIII
+XVIII
+XVIII
+XVIII
+XVIII
+XVIII
+XVIII
+XVIII
 XXVIII
 XXVIII
 XXVIII
@@ -7488,6 +7425,14 @@ XXXVIII
 XXXVIII
 XXXVIII
 XXXVIII
+XIII
+XIII
+XIII
+XIII
+XIII
+XIII
+XIII
+XIII
 XXIII
 XXIII
 XXIII
@@ -7504,23 +7449,33 @@ XXXIII
 XXXIII
 XXXIII
 XXXIII
+LII
+LII
 XLII
 XLII
 XLII
 XLII
 XLII
 XLII
-XVII
-XVII
-XVII
-XVII
-XVII
-XVII
-XVII
-XVII
+VII
+VII
+VII
+VII
+VII
+VII
+VII
+VII
 XLVII
 XLVII
 XLVII
+XVII
+XVII
+XVII
+XVII
+XVII
+XVII
+XVII
+XVII
 XXVII
 XXVII
 XXVII
@@ -7537,6 +7492,14 @@ XXXVII
 XXXVII
 XXXVII
 XXXVII
+XII
+XII
+XII
+XII
+XII
+XII
+XII
+XII
 XXII
 XXII
 XXII
@@ -7554,15 +7517,17 @@ XXXII
 XXXII
 XXXII
 and Malinniki.]
-XLI
-XLI
-XLI
-XLI
-XLI
-XLI
-XLI
+LI
+LI
 But were it not immoral I
 Gallic school, to which the poet himself and his uncle Vassili
+XLI
+XLI
+XLI
+XLI
+XLI
+XLI
+XLI
 Imagine! Here alone am I!
 The brilliant Nina Voronskoi,
 Another! to none other I
@@ -7571,17 +7536,25 @@ But who abandon itas I
 Enough! with tranquil spirit I
 In former years thus did not I
 Mutual repulsion and ennui,
-XVI
-XVI
-XVI
-XVI
-XVI
-XVI
-XVI
-XVI
+VI
+VI
+VI
+VI
+VI
+VI
+VI
+VI
 XLVI
 XLVI
 XLVI
+XVI
+XVI
+XVI
+XVI
+XVI
+XVI
+XVI
+XVI
 XXVI
 XXVI
 XXVI
@@ -7598,6 +7571,14 @@ XXXVI
 XXXVI
 XXXVI
 XXXVI
+XI
+XI
+XI
+XI
+XI
+XI
+XI
+XI
 XXI
 XXI
 XXI
@@ -7667,14 +7648,9 @@ The sad moon only could remark.
 a portion of their heads shaved as a distinctive mark.]
 There, when the rains of spring we mark
 that strong hearty peasant women were to be seen at work
-XL
-XL
-XL
-XL
-XL
-XL
-XL
-XL
+L
+L
+L
 Assemblies oligarchical
 They deem her somewhat finical,
 Of a heart cold and cynical?
@@ -7831,6 +7807,14 @@ They laugh, they argue, and they bawl,
 A schoolmaster in yellow shawl
 A love epistle he doth scrawl.
 He a polite reply doth scrawl.
+XL
+XL
+XL
+XL
+XL
+XL
+XL
+XL
 And a boy handed round the cream.
 The memory of the bard, a dream,
 But Tania just as in a dream
@@ -8185,7 +8169,6 @@ Time was, the breath of early dawn
 Hung on a pine branch earthward drawn
 In silence shall I sit and yawn
 There is no path the storm hath strewn
-gown.]
 Mushrooms for winter salted down,
 Their branches by the snow bowed down.
 And on the footstool sitting down
@@ -8193,6 +8176,7 @@ And at the table sat her down.
 And the fair sex as light as down!
 Her on a shaky bench sit down
 I feel thou wast by God sent down
+gown.]
 In a half-open dressing-gown
 You never since your nose have shown.
 Thus her perversity hath shown.
@@ -9259,8 +9243,8 @@ And with emotional delight
 He finally lost all delight
 And bless mankind with full delight.
 His ardent soul with full delight.
-And solitude and calm delight,
 And solitude and calm delight.
+And solitude and calm delight,
 The votary of vain delight
 Contemplativeness, her delight,
 My pen no longer finds delight,
@@ -9652,45 +9636,45 @@ But praised be God! in health art thou!
 The God of Love is after you!
 Demands that I translate for you
 But with austerity!for you
-XV
-XV
-XV
-XV
+V
+V
+V
+V
+V
+V
+V
+V
 IV
 IV
 IV
 IV
 IV
-XV
 IV
 IV
 IV
-XV
-XV
-XV
-XIV
-XIV
 LIV
-XIV
-XIV
-XIV
-XIV
-XIV
-XIV
 XLIV
 XLIV
 XLIV
 XLIV
 XLIV
-XXIV
-XXIV
-XXIV
-XXIV
-XXIV
-XXIV
-XXIV
-XXIV
+XIV
+XIV
+XIV
+XIV
+XIV
+XIV
+XIV
+XIV
 Thus Boileau, in the guise of invective, eulogizes Louis XIV.
+XXIV
+XXIV
+XXIV
+XXIV
+XXIV
+XXIV
+XXIV
+XXIV
 XXXIV
 XXXIV
 XXXIV
@@ -9702,6 +9686,14 @@ XXXIV
 XLV
 XLV
 XLV
+XV
+XV
+XV
+XV
+XV
+XV
+XV
+XV
 XXV
 XXV
 XXV
@@ -9804,39 +9796,39 @@ The horizon luminous doth grow,
 Nought but of dinners a long row,
 And all your love on self bestow
 And linen on him doth bestow.
-XX
-IX
-IX
-IX
-XX
-XX
-IX
-XX
-XX
-IX
-XX
-IX
-IX
-XX
-IX
-XX
+X
+X
+X
+X
+X
+X
+X
+X
 The Muse capricious let us coax,
 Flew to collect his rural tax
 The bee forth from his cell of wax
 We glide along a floor of wax.
 In this the love of the fair sex
 In love, although its tempests vex,
-XIX
-XIX
-XIX
-XIX
-XIX
-XIX
-XIX
-XIX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
+IX
 XLIX
 XLIX
 XLIX
+XIX
+XIX
+XIX
+XIX
+XIX
+XIX
+XIX
+XIX
 XXIX
 XXIX
 XXIX
@@ -9857,6 +9849,14 @@ Of diplomats and warlike beaux
 And also fashionable beaux.
 All hail! my good old friend Bordeaux!
 I prefer sensible Bordeaux.
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
 XXX
 XXX
 XXX
