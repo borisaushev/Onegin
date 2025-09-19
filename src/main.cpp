@@ -3,6 +3,8 @@
 #include "sorter.h"
 #include "tests.h"
 
+//TODO state struct
+//TODO safe call
 int main() {
     #ifdef DEBUG
         runTests();

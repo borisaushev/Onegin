@@ -33,4 +33,12 @@ void print_ptr_array(FILE* output, ptr_array_buf* ptr_array);
  */
 void print_buf(FILE* output, ptr_array_buf* ptr_array);
 
+
+/**
+ * prints all ptr->len symbols and a \n at the end
+ * @param output output stream
+ * @param ptr_wrap ptr wrap to print
+ */
+void my_printf(FILE* output, ptr_wrap_t ptr_wrap);
+
 #endif //ONEGIN_POINTER_ARRAY_BUF_H

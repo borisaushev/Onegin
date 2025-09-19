@@ -1,5 +1,3 @@
-
-
 -----SORTED POINTER ARRAY BY START-------
 
 Abandon cities riotous,

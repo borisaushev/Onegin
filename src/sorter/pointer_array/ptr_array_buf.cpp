@@ -3,7 +3,7 @@
 #include "common.h"
 
 
-void my_printf(FILE* output, const ptr_wrap_t ptr_wrap) {
+void my_printf(FILE* output, ptr_wrap_t ptr_wrap) {
     fprintf(output, "%.*s\n", ptr_wrap.len, ptr_wrap.ptr);
 }
 

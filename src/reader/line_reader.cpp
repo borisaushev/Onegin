@@ -4,7 +4,7 @@
 #include "ptr_array_buf.h"
 
 static long get_file_size(const char* filename) {
-    struct stat st;
+    struct stat st = {};
     if (stat(filename, &st) == 0) {
         return st.st_size;
     }

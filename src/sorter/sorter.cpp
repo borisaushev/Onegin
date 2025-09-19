@@ -8,8 +8,8 @@ int my_strcmp_start(const void* vpstr1, const void* vpstr2) {
     assert(vpstr1);
     assert(vpstr2);
 
-    ptr_wrap* wstr1 = (ptr_wrap_t*)vpstr1;
-    ptr_wrap* wstr2 = (ptr_wrap_t*)vpstr2;
+    const ptr_wrap_t* wstr1 = (const ptr_wrap_t*)vpstr1;
+    const ptr_wrap_t* wstr2 = (const ptr_wrap_t*)vpstr2;
     assert(wstr1);
     assert(wstr2);
 
@@ -71,8 +71,8 @@ int my_strcmp_end(const void* vpstr1, const void* vpstr2) {
     assert(vpstr1);
     assert(vpstr2);
 
-    ptr_wrap* wstr1 = (ptr_wrap_t*)vpstr1;
-    ptr_wrap* wstr2 = (ptr_wrap_t*)vpstr2;
+    const ptr_wrap_t* wstr1 = (const ptr_wrap_t*)vpstr1;
+    const ptr_wrap_t* wstr2 = (const ptr_wrap_t*)vpstr2;
     assert(wstr1);
     assert(wstr2);
 
