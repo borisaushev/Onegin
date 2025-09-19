@@ -9,7 +9,6 @@ static long get_file_size(const char* filename) {
         return st.st_size;
     }
     else {
-        perror("Error getting file status");
         return -1;
     }
 }
@@ -27,26 +26,31 @@ static void parse_pointers(char *text, int ptr_count, ptr_wrap_t** ptr_array) {
     }
 }
 
-static void read_file(const char *file_path, char** text, int* bytes_read) {
+static error_info_t read_file(const char *file_path, char** text, int* bytes_read) {
     int stream = open(file_path, O_RDONLY);
 
     int file_size = get_file_size(file_path);
     DPRINTF("file size: %d\n", file_size);
 
-    if (file_size == -1) {
-        printf("Could not open file %s\n", file_path);
-        exit(1);
+    if (file_size < 0) {
+        PRINTERR("Could not open file %s\n", file_path);
+        return {FILE_NOT_FOUND, "Could not open file"};
     }
-    *text = (char *) calloc(file_size + 2, sizeof(char));
+    *text = (char *) calloc(file_size, sizeof(char));
     *bytes_read = read(stream, *text, file_size);
 
     if (*bytes_read == -1) {
-        printf("Could not read file %s\n", file_path);
-        DPRINTF("error: %s\n", strerror(errno));
+        PRINTERR("Could not read file %s with err: %s\n", file_path, strerror(errno));
+        return {FILE_NOT_READABLE, "Could not read file"};
     }
     DPRINTF("Read %d bytes\n", *bytes_read);
-
     close(stream);
+
+    *text = (char *) realloc(*text,  *bytes_read + 2);
+    (*text)[*bytes_read] = (*text)[*bytes_read-1] == '\n' ? '\0' : '\n';
+    (*text)[*bytes_read + 1] = '\0';
+
+    return {SUCCESS};
 }
 
 static void count_lines(const char *text, int bytes_read, int* ptr_count) {
@@ -57,16 +61,12 @@ static void count_lines(const char *text, int bytes_read, int* ptr_count) {
     }
 }
 
-int parse_text(const char *file_path, pointer_array_buf_t *arr_ptr) {
+error_info_t parse_text(const char *file_path, pointer_array_buf_t *arr_ptr) {
     assert(file_path);
 
-    char *text;
-    int bytes_read;
-    read_file(file_path, &text, &bytes_read);
-
-    text = (char *) realloc(text,  bytes_read + 2);
-    text[bytes_read] = (text[bytes_read-1] == '\n' ? '\0' : '\n');
-    text[bytes_read + 1] = '\0';
+    char *text = NULL;
+    int bytes_read = -1;
+    SAFE_CALL(read_file(file_path, &text, &bytes_read));
 
     int ptr_count = 0;
     count_lines(text, bytes_read, &ptr_count);
@@ -81,5 +81,5 @@ int parse_text(const char *file_path, pointer_array_buf_t *arr_ptr) {
     arr_ptr->buf = text;
     arr_ptr->lines_count = ptr_count;
 
-    return 0;
+    return {SUCCESS};
 }

@@ -25,6 +25,7 @@ int my_strcmp_start(const void* vpstr1, const void* vpstr2) {
     for (; i1 < l1 && i2 < l2; i1++, i2++) {
         assert(i1 < l1);
         assert(i2 < l2);
+
         while ((ispunct(str1[i1]) || str1[i1] == ' ') && i1 < l1) {
             i1++;
         }
@@ -46,6 +47,8 @@ int my_strcmp_start(const void* vpstr1, const void* vpstr2) {
         assert(i2 < l2);
         char c1 = (char) tolower(str1[i1]);
         char c2 = (char) tolower(str2[i2]);
+
+
         if (c1 < c2) {
             return -1;
         }

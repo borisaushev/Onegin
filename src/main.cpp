@@ -15,7 +15,7 @@ int main() {
     //parsing
     FILE* output = fopen(OUTPUT_FILE_PATH, "w");
     pointer_array_buf_t ptr_array = {};
-    parse_text(SOURCE_FILE_PATH, &ptr_array);
+    SAFE_CALL(parse_text(SOURCE_FILE_PATH, &ptr_array));
 
     //sorting by start
     qsort(ptr_array.pointer_arr, ptr_array.lines_count, sizeof(ptr_wrap_t), my_strcmp_start);
